@@ -72,3 +72,8 @@ The following instructions are for installation on Ubuntu 22.04
 2. Type the address of the subnet you would like to check in CIDR format at the following prompt and hit enter:
    `Please enter the subnet you would like to check in CIDR notation:`
 3. The system will output a list of any conflicting subnets in the inventory.
+
+
+## Issues
+
+To report any bugs or issues, please create a new issue at this page: https://github.com/PeterAdamson/Subnet-Checker/issues
