@@ -295,27 +295,6 @@ def setup_parser():
     return parser
 
 
-def setup_inventory():
-    """Pre populate inventory with reserved address.
-
-    Args:
-        None
-
-    Returns:
-        argparse.ArgumentParser: parser object with command line arguments configured
-
-    Raises:
-        OSError: raised if the inventory file fails to create due to an issue such as disk being full
-    """
-    output_file = Path(INVENTORY_PATH)
-    output_file.parent.mkdir(exist_ok=True, parents=True)
-    try:
-        open(INVENTORY_PATH, 'a').close()
-    except OSError:
-        print('Inventory failed to create, exiting')
-        sys.exit(1)
-
-
 # TODO: This user interface only prompts the user once and exits.  It may be preferable to the user to be able
 #  to perform multiple actions without exiting the program each time
 if __name__ == '__main__':
@@ -327,7 +306,6 @@ if __name__ == '__main__':
         sys.exit(1)
 
     args = setup_parser().parse_args()
-    setup_inventory()
 
     subnet = Subnet()
     # TODO: Lots of prompt reuse between arguments, would be better to break this out user prompts to a dedicated method

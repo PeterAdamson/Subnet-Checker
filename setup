@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+mkdir /subnet_inventory
+touch /subnet_inventory/inventory
+chmod 777 /subnet_inventory
+chmod 777 /subnet_inventory/inventory

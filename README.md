@@ -23,11 +23,13 @@ The following instructions are for installation on Ubuntu 22.04
     `unzip Subnet-Checker-main.zip`
 4. navigate into the unzipped folder with the following command:
    `cd Subnet-Checker-main`
-5. To run the system and see a list of available options, use the command:
+5. Run the setup script as a sudo user to initialize the inventory with the following command:
+   `sudo ./setup`
+6. To run the system and see a list of available options, use the command:
    `python3 subnet_inventory.py`
    or
    `python3 subnet_inventory.py -h`
-6. To run the unit and system tests, use the command:
+7. To run the unit and system tests, use the command:
    `python3 tests.py`
 
 ## Detailed Usage
