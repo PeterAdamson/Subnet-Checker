@@ -13,9 +13,9 @@ Usage: python3 subnet_inventory.py [arguments]
 
 import argparse
 import ipaddress
+import os
 import re
 import sys
-from pathlib import Path
 
 # TODO: A flat file is not the ideal solution for this system, a database would be a better solution
 INVENTORY_PATH = "/subnet_inventory/inventory"
@@ -294,10 +294,16 @@ def setup_parser():
                                   action="store_true", )
     return parser
 
+def initialization_check():
+    if not os.path.exists(INVENTORY_PATH):
+        print("Subnet inventory does not exist.  Please run the setup script to initialize the system.  "
+              "See README for more details.")
+        sys.exit(1)
 
 # TODO: This user interface only prompts the user once and exits.  It may be preferable to the user to be able
 #  to perform multiple actions without exiting the program each time
 if __name__ == '__main__':
+    initialization_check()
     args = setup_parser()
 
     # show help message if no arguments supplied
