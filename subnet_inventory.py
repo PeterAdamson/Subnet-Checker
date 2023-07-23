@@ -368,7 +368,7 @@ if __name__ == '__main__':
         print("Checking for subnet conflicts")
         cidr_addr_string = input("Please enter the subnet you would like to check in CIDR notation: ")
         if check_address_format(cidr_string=cidr_addr_string):
-            conflicts = check_inventory_for_conflicts(cidr=ipaddress.ip_network(cidr_addr_string))
+            conflicts = check_inventory_for_conflicts(cidr=ipaddress.ip_network(cidr_addr_string, strict=False))
             if not conflicts:
                 print("No conflicting subnets in inventory")
             else:
