@@ -18,7 +18,7 @@ import sys
 from pathlib import Path
 
 # TODO: A flat file is not the ideal solution for this system, a database would be a better solution
-INVENTORY_PATH = "/usr/local/share/subnet_inventory/inventory"
+INVENTORY_PATH = "/subnet_inventory/inventory"
 reserved_subnets = ["192.168.14.128/25"]
 
 
